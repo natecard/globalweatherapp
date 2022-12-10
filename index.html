@@ -13,31 +13,29 @@
       <div id="header">
         <form id="form" action="">
           <input type="text" id="citySearch" name="query" value="San Francisco, California" placeholder="Enter City">
-            <div>
-              <input type="radio" checked name="units" class="units" id="celsius" value="metric">
-                <label for="celsius">Celsius</label>
-              <input type="radio" name="units" class="units" id="fahrenheit" value="imperial">
-                <label for="fahrenheit">Fahrenheit</label>
-            </div>
           <button name="submit" id="search">🔍</button>
+          <div>
+            <input type="radio" checked name="units" class="units" id="celsius" value="metric">
+            <label for="celsius">℃</label>
+            <input type="radio" name="units" class="units" id="fahrenheit" value="imperial">
+            <label for="fahrenheit">℉</label>
+          </div>
         </form>
       </div>
-      <div id="row1">
         <div class="currentWeather">
           <div id="city"></div>
-          <div id="weatherDesc" class="weatherInfo thirdCol"></div>
+          <div id="country"></div>
           <img id="weatherIcon" class="weatherInfo thirdCol" src=""></img>
+          <div id="weatherDesc" class="weatherInfo thirdCol"></div>
           <div id="temp" class="weatherInfo firstCol"><span class="tempUnits"></span></div>
           <div id="feelsLike" class="weatherInfo firstCol"><span class="tempUnits"></span></div>
-          <div id="dewPoint" class="weatherInfo firstCol"><span class="tempUnits"></span></div>
-          <div id="humidity" class="weatherInfo firstCol"></div>
+          <div id="dewPoint" class="weatherInfo secondCol"><span class="tempUnits"></span></div>
+          <div id="humidity" class="weatherInfo secondCol"></div>
           <div id="UV" class="weatherInfo firstCol"></div>
-          <div id="precipitation" class="weatherInfo firstCol"></div>
+          <div id="precipitation" class="weatherInfo secondCol"></div>
           <div id="sunrise" class="weatherInfo firstCol"></div>
           <div id="sunset" class="weatherInfo secondCol"></div>
         </div>
-      </div>
-      <div id="row2">
         <div id="forecastWeather">
           <div id="day1" class="day">
             <li class="date"></li>
@@ -89,7 +87,11 @@
             <li class="description"></li>
           </div>
         </div>
-      </div>
+      <footer id="footer">
+        <div id="footDiv">
+        </div>
+        <a href="http:\\www.github.com/natecard"><img src="./images/github-mark-white.svg" viewBox="0 0 60 55" width="25" height="25" alt="github" ></a>
+      </footer>
     </div>
   <script type="module" src="/main.js"></script>
 </body>
