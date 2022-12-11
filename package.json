@@ -17,7 +17,7 @@
   "dependencies": {
     "dayjs": "^1.11.6"
   },
-  "main": "index.html",
+  "main": "main.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
