@@ -179,6 +179,7 @@ button:focus-visible {
   #wrapper{
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 1fr 1fr 0.3fr;
+    justify-content: center;
     grid-template-areas:
     "header"
     "weather"
@@ -189,7 +190,7 @@ button:focus-visible {
   .currentWeather{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.2fr 0.2fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
-    gap: 0.2rem;
+    gap: 1rem;
     padding: 0.5rem;
     align-items: flex-end;
     grid-template-areas:
@@ -203,8 +204,8 @@ button:focus-visible {
   }
   #forecastWeather{
     display: grid;
-    padding: 0 1rem 0 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 2rem 0 2rem;
+    grid-template-columns: 0.8fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
     "day1 day2 day3"
@@ -255,8 +256,11 @@ button:focus-visible {
     justify-self: flex-start;
   }
   #city{
-    align-self: flex-end;
-    justify-self: flex-end;
+    align-content: flex-end;
+    text-align:right;
+  }
+  #country{
+    text-align: left;
   }
 }
 @media (prefers-color-scheme: light) {

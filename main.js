@@ -60,6 +60,7 @@ try {
       countryNameDisplay.innerHTML = `${country}`;
     }
     cityNameDisplay.innerHTML = `${name},`;
+    weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
     weatherDesc.innerHTML = `${main} with ${description}`;
     temperature.innerHTML = `Temperature: ${Math.round(temp)}${tempUnits}`;
     feelsLike.innerHTML = `Feels Like: ${Math.round(feels)}${tempUnits}`;
@@ -70,22 +71,18 @@ try {
     const timeZoneData = (forecast.timezone_offset / 60 / 60);
     sunriseDisplay.innerHTML = `Sunrise: ${dayjs.unix(sunrise).utcOffset(timeZoneData).format('LT')}`;
     sunsetDisplay.innerHTML = `Sunset: ${dayjs.unix(sunset).utcOffset(timeZoneData).format('LT')}`;
-  }
-
-  async function updateDisplay() {
-    const displayWidth = window.innerWidth;
-    const forecast = await forecastFetch(form.query.value);
-    const { icon } = forecast.current.weather[0];
-    if (displayWidth < 400) {
-      weatherIcon.src = `http://openweathermap.org/img/wn/${icon}.png`;
-    } else if (displayWidth < 800) {
-      weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-    } else {
-      weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+    async function updateDisplay() {
+      const displayWidth = window.innerWidth;
+      if (displayWidth < 200) {
+        weatherIcon.src = `http://openweathermap.org/img/wn/${icon}.png`;
+      } else if (displayWidth < 800) {
+        weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      } else {
+        weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+      }
     }
+    window.addEventListener('resize', updateDisplay);
   }
-
-  window.addEventListener('resize', updateDisplay);
 
   // Render each day's forecast
   async function renderDailyForecast(forecastWeather) {
@@ -224,7 +221,6 @@ try {
     // turn button back on after search is returned
     form.submit.disabled = false;
     renderCityWeather(forecastWeather.results);
-    updateDisplay(forecastWeather.results);
     renderDailyForecast(forecastWeather.results);
   }
 
