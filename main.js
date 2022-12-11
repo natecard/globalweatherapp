@@ -55,11 +55,10 @@ try {
     const { main, description, icon } = forecast.current.weather[0];
     const { pop, rain, snow } = forecast.daily[0];
     if (country === 'US') {
-      countryNameDisplay.innerHTML = `${state}`;
+      cityNameDisplay.innerHTML = `${name}, ${state}`;
     } else {
-      countryNameDisplay.innerHTML = `${country}`;
+      cityNameDisplay.innerHTML = `${name}, ${country}`;
     }
-    cityNameDisplay.innerHTML = `${name},`;
     weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
     weatherDesc.innerHTML = `${main} with ${description}`;
     temperature.innerHTML = `Temperature: ${Math.round(temp)}${tempUnits}`;
