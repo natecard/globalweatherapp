@@ -1,6 +1,5 @@
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-unused-vars */
-import './style.css';
 import utc from 'dayjs/plugin/utc';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
